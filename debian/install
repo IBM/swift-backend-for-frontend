@@ -1,0 +1,3 @@
+.build/							usr/src/swiftbackendforfrontend
+terraform/scripts/install.sh	usr/src/swiftbackendforfrontend
+terraform/scripts/start.sh		usr/src/swiftbackendforfrontend
