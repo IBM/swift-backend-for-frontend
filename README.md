@@ -1,9 +1,9 @@
+[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
+![Platform](https://img.shields.io/badge/platform-SWIFT-lightgrey.svg?style=flat)
+
 # Create and deploy a Swift Backend For Frontend (BFF) using Kitura
 
 Backend for Frontend (BFF) project with Kitura on Swift
-
-[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
-![Platform](https://img.shields.io/badge/platform-SWIFT-lightgrey.svg?style=flat)
 
 ### Table of Contents
 * [Summary](#summary)
