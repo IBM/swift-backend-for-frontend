@@ -38,8 +38,8 @@ When you push your application to IBM Cloud, however, these values are no longer
 The IBM Cloud development plugin makes it easy to compile and run your application if you do not have all of the tools installed on your computer yet. Your application will be compiled with Docker containers. To compile and run your app, run:
 
 ```bash
-bx dev build
-bx dev run
+ibmcloud dev build
+ibmcloud dev run
 ```
 
 ### Using your local development environment
@@ -65,8 +65,8 @@ Your application is running at: `http://localhost:8080/` in your browser.
 
 To build and debug your app, run:
 ```bash
-bx dev build --debug
-bx dev debug
+ibmcloud dev build --debug
+ibmcloud dev debug
 ```
 
 ## License
