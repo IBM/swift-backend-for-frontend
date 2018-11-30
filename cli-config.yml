@@ -47,6 +47,5 @@ chart-path : "chart/swiftbackendforfrontend"
 
 # The IBM version of this configuration
 version : "0.0.3"
-ibm-generated-id : "779b2731-b684-461d-b13d-7b0465ec0d2a"
-ibm-cloud-app-id : "71a317c7-71df-4de6-a4c2-1ad61fdf889e"
+
 credentials-filepath : "credentials.json, config.json, spec.json, localdev-config.json, config/localdev-config.json"
