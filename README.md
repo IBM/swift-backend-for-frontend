@@ -30,7 +30,7 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 1. [Configuration](#2-configuration)
 1. [Run](#3-run)
 
-### Install development tools
+### 1. Install development tools
 
 #### Local Development Tools Setup (optional)
 
@@ -50,13 +50,13 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 ***Note** you must publish your project to [Github](https://github.com/) for this to work.
 
-### Configuration
+### 2. Configuration
 
 Your application configuration information is stored in `config.json`. If you selected services added to your project, you will see Cloudant, Object Storage, and other services with their connection information such as username, password, and hostname listed here. This is useful for connecting to remote services while running your application locally.
 
 When you push your application to IBM Cloud, however, these values are no longer used, and instead IBM Cloud automatically connects to those bound services through the use of environment variables. The `config.json` file has been added to the `.gitignore` file so you don't accidently check in the secret credentials.
 
-### Run
+### 3. Run
 
 #### Using IBM Cloud development CLI
 
