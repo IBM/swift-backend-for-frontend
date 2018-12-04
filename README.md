@@ -24,19 +24,25 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 [![BFFs and GraphQL, terms you should know and why](https://img.youtube.com/vi/B5OdK21ZevI/maxresdefault.jpg)](https://www.youtube.com/watch?v=B5OdK21ZevI)
 
-## Requirements
+## Steps
 
-### Local Development Tools Setup (optional)
+1. [Install development tools](#1-install-development-tools)
+1. [Configuration](#2-configuration)
+1. [Run](#3-run)
 
-- On Linux, install the [Swift toolchain](http://www.swift.org) version 3.1.1
-- On macOS, install [Xcode](https://developer.apple.com/download) 8.3+
+### Install development tools
 
-### IBM Cloud development tools setup (optional)
+#### Local Development Tools Setup (optional)
+
+- On Linux, install the [Swift toolchain](http://www.swift.org) version _v3.1.1_.
+- On macOS, install [Xcode](https://developer.apple.com/download) _v8.3+_
+
+#### IBM Cloud development tools setup (optional)
 
 1. Install [IBM Cloud Developer Tools](https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli) on your machine
 2. Install the plugin with: `ibmcloud plugin install dev -r IBM Cloud`
 
-### IBM Cloud DevOps setup (optional)
+#### IBM Cloud DevOps setup (optional)
 
 [![Create Toolchain](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/)
 
@@ -44,15 +50,15 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 ***Note** you must publish your project to [Github](https://github.com/) for this to work.
 
-## Configuration
+### Configuration
 
 Your application configuration information is stored in `config.json`. If you selected services added to your project, you will see Cloudant, Object Storage, and other services with their connection information such as username, password, and hostname listed here. This is useful for connecting to remote services while running your application locally.
 
 When you push your application to IBM Cloud, however, these values are no longer used, and instead IBM Cloud automatically connects to those bound services through the use of environment variables. The `config.json` file has been added to the `.gitignore` file so you don't accidently check in the secret credentials.
 
-## Run
+### Run
 
-### Using IBM Cloud development CLI
+#### Using IBM Cloud development CLI
 
 The IBM Cloud development plugin makes it easy to compile and run your application if you do not have all of the tools installed on your computer yet. Your application will be compiled with Docker containers. To compile and run your app, run:
 
@@ -61,7 +67,7 @@ ibmcloud dev build
 ibmcloud dev run
 ```
 
-### Using your local development environment
+#### Using your local development environment
 
 Once the Swift toolchain has been installed, you can compile a Swift project with:
 
@@ -78,11 +84,10 @@ Your application is running at: `http://localhost:8080/` in your browser.
 - Your [Swagger UI](http://swagger.io/swagger-ui/) is running on: `/explorer`
 - Your Swagger definition is running on: `/swagger/api`
 
-## Debug
+## Troubleshooting
 
-#### Using IBM Cloud development CLI
+Using IBM Cloud development CLI, build and debug your app using:
 
-To build and debug your app, run:
 ```bash
 ibmcloud dev build --debug
 ibmcloud dev debug
