@@ -54,9 +54,9 @@ form:
     parameters:
       app-name: "{{app-name}}"
       toolchain-name: "{{toolchain-name}}"
-      dev-region: "{{deploymentRegion}}"
+      dev-region: "{{region}}"
       api-key: "{{api-key}}"
-      dev-space: "{{deploymentSpace}}"
-      dev-organization: "{{deploymentOrg}}"
+      dev-space: "{{space}}"
+      dev-organization: "{{organization}}"
       cf-host: "{{cf-host}}"
       cf-domain: "{{cf-domain}}"

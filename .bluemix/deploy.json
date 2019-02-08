@@ -12,6 +12,7 @@
       "description": "The IBM Cloud region",
       "type": "string"
     },
+    "{{#isCF}}"
     "dev-organization": {
       "description": "The IBM Cloud org",
       "type": "string"
@@ -20,12 +21,23 @@
       "description": "The IBM Cloud space",
       "type": "string"
     },
+    "{{/isCF}}"
+    "{{#isKube}}"
+    "image-registry-token": {
+      "description": "Container Registry access token. Retrievable via [ibmcloud cr tokens]",
+      "type": "string"
+    },
+    "kube-cluster-name": {
+      "description": "Your cluster name. Retrieve it with [ibmcloud cs clusters] or via the console at https://cloud.ibm.com/containers-kubernetes/home/clusters.",
+      "type": "string"
+    },
+    "{{/isKube}}"
     "app-name": {
       "description": "app name",
       "type": "string"
     }
   },
-  "required": ["dev-region", "dev-organization", "dev-space",  "app-name"],  "form": [{
+  "required": ["dev-region", "{{#isCF}}""dev-organization", "dev-space","{{/isCF}}" "app-name""{{#isKube}}", "api-key", "image-registry-token", "image-pull-secret-name", "kube-cluster-name""{{/isKube}}"],  "form": [{
     "type": "validator",
     "url": "/devops/setup/bm-helper/helper.html"
   },
@@ -35,34 +47,72 @@
     "title": "IBM Cloud API Key",
     "key": "api-key"
   },
+  "{{#isKube}}"
+  {
+    "type": "password",
+    "readonly": false,
+    "title": "Container Registry access token",
+    "key": "image-registry-token"
+  },
+  {
+    "type": "text",
+    "readonly": false,
+    "title": "Kubernetes Cluster Name",
+    "key": "kube-cluster-name"
+  },
+  "{{/isKube}}"
   {
     "type": "text",
     "readonly": false,
     "title": "App Name",
     "key": "app-name"
-  }, {
+  },
+  {
     "type": "table",
+    "{{#isCF}}"
     "columnCount": 3,
     "widths": ["28%", "28%", "28%"],
-    "items": [{
-      "type": "label",
-      "title": "Region"
-    }, {
-      "type": "label",
-      "title": "Organization"
-    }, {
-      "type": "label",
-      "title": "Space"
-    }, {
-      "type": "select",
-      "key": "dev-region"
-    }, {
-      "type": "select",
-      "key": "dev-organization"
-    }, {
-      "type": "select",
-      "key": "dev-space",
-      "readonly": false
-    }]
+    "items": [
+      {
+        "type": "label",
+        "title": "Region"
+      },
+      {
+        "type": "label",
+        "title": "Organization"
+      },
+      {
+        "type": "label",
+        "title": "Space"
+      },
+      {
+        "type": "select",
+        "key": "dev-region"
+      },
+      {
+        "type": "select",
+        "key": "dev-organization"
+      },
+      {
+        "type": "select",
+        "key": "dev-space",
+        "readonly": false
+      }
+    ]
+    "{{/isCF}}"
+    "{{#isKube}}"
+    "columnCount": 1,
+    "widths": ["28%"],
+    "items": [
+      {
+        "type": "label",
+        "title": "Region"
+      },
+      {
+        "type": "select",
+        "key": "dev-region"
+      }
+    ]
+    "{{/isKube}}"
   }]
 }
